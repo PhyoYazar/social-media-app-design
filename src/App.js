@@ -1,4 +1,4 @@
-import Feed from './components/Feed';
+import Feed from './components/Feed/Feed';
 import SideBar from './components/SideBar';
 import RightBar from './components/RightBar';
 import Stack from '@mui/material/Stack';
