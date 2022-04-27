@@ -17,8 +17,6 @@ import {
 } from '@mui/material';
 import { Mail, Notifications } from '@mui/icons-material';
 
-import photo1 from './../asserts/photo.jpg';
-
 const BoxMenuTypo = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -89,18 +87,18 @@ const NavBar = () => {
             <Notifications />
           </Badge>
           <Avatar
-            alt='Yazu'
-            src={photo1}
-            sx={{ width: 32, height: 32 }}
+            alt='Remy Sharp'
+            src='https://material-ui.com/static/images/avatar/1.jpg'
+            sx={{ width: 30, height: 30 }}
             onClick={(e) => setAnchorEl(e.currentTarget)}
           />
         </IconsContainer>
         <UserBoxMobile>
           <SearchIcon />
           <Avatar
-            alt='Yazu'
-            src={photo1}
-            sx={{ width: 32, height: 32 }}
+            alt='Remy Sharp'
+            src='https://material-ui.com/static/images/avatar/1.jpg'
+            sx={{ width: 30, height: 30 }}
             onClick={(e) => setAnchorEl(e.currentTarget)}
           />
         </UserBoxMobile>
