@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
   Article,
   ExpandLess,
@@ -20,9 +22,8 @@ import {
   ListItemText,
   Switch,
 } from '@mui/material';
-import React from 'react';
 
-const SideBar = (props) => {
+const ListItems = (props) => {
   const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
@@ -30,13 +31,7 @@ const SideBar = (props) => {
   };
 
   return (
-    <Box
-      sx={{
-        flex: 1,
-        p: 2,
-        display: { xs: 'none', sm: 'block' },
-      }}
-    >
+    <Box position={'fixed'}>
       <List>
         <ListItemButton>
           <ListItemIcon>
@@ -107,4 +102,4 @@ const SideBar = (props) => {
   );
 };
 
-export default SideBar;
+export default ListItems;

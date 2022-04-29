@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Feed from './components/Feed/Feed';
-import SideBar from './components/SideBar';
+import SideBar from './components/SideBar/SideBar';
 import RightBar from './components/RightBar/RightBar';
 import Stack from '@mui/material/Stack';
 
@@ -11,6 +11,7 @@ import { Box, createTheme, ThemeProvider } from '@mui/material';
 
 function App() {
   const [mode, setMode] = useState('light');
+  // const [menuOpen, setMenuOpen] = useState(false);
 
   const darkTheme = createTheme({
     palette: {

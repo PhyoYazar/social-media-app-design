@@ -60,75 +60,77 @@ const NavBar = () => {
   const open = Boolean(anchorEl);
 
   return (
-    <AppBar position='sticky'>
-      <StyledToolbar>
-        <BoxMenuTypo>
-          <IconButton
-            sx={{
-              display: { xs: 'block', sm: 'none' },
-              mr: '10px',
-              pt: 2,
+    <>
+      <AppBar position='sticky'>
+        <StyledToolbar>
+          <BoxMenuTypo>
+            <IconButton
+              sx={{
+                display: { xs: 'block', md: 'none' },
+                mr: '10px',
+                pt: 2,
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant='h6' component='div'>
+              Yazu
+            </Typography>
+          </BoxMenuTypo>
+          <Search>
+            <InputBase placeholder='Search...' />
+          </Search>
+          <IconsContainer>
+            <Badge badgeContent={4} color='error'>
+              <Mail />
+            </Badge>
+            <Badge badgeContent={4} color='error'>
+              <Notifications />
+            </Badge>
+            <Avatar
+              alt='Remy Sharp'
+              src='https://material-ui.com/static/images/avatar/1.jpg'
+              sx={{ width: 30, height: 30 }}
+              onClick={(e) => setAnchorEl(e.currentTarget)}
+            />
+          </IconsContainer>
+          <UserBoxMobile>
+            <SearchIcon />
+            <Avatar
+              alt='Remy Sharp'
+              src='https://material-ui.com/static/images/avatar/1.jpg'
+              sx={{ width: 30, height: 30 }}
+              onClick={(e) => setAnchorEl(e.currentTarget)}
+            />
+          </UserBoxMobile>
+          <Menu
+            id='demo-positioned-menu'
+            aria-labelledby='demo-positioned-button'
+            anchorEl={anchorEl}
+            open={open}
+            onClose={(e) => setAnchorEl(null)}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
             }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant='h6' component='div'>
-            Yazu
-          </Typography>
-        </BoxMenuTypo>
-        <Search>
-          <InputBase placeholder='Search...' />
-        </Search>
-        <IconsContainer>
-          <Badge badgeContent={4} color='error'>
-            <Mail />
-          </Badge>
-          <Badge badgeContent={4} color='error'>
-            <Notifications />
-          </Badge>
-          <Avatar
-            alt='Remy Sharp'
-            src='https://material-ui.com/static/images/avatar/1.jpg'
-            sx={{ width: 30, height: 30 }}
-            onClick={(e) => setAnchorEl(e.currentTarget)}
-          />
-        </IconsContainer>
-        <UserBoxMobile>
-          <SearchIcon />
-          <Avatar
-            alt='Remy Sharp'
-            src='https://material-ui.com/static/images/avatar/1.jpg'
-            sx={{ width: 30, height: 30 }}
-            onClick={(e) => setAnchorEl(e.currentTarget)}
-          />
-        </UserBoxMobile>
-        <Menu
-          id='demo-positioned-menu'
-          aria-labelledby='demo-positioned-button'
-          anchorEl={anchorEl}
-          open={open}
-          onClose={(e) => setAnchorEl(null)}
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-        >
-          <MenuItem sx={{ display: { xs: 'block', sm: 'none' } }}>
-            Message
-          </MenuItem>
-          <MenuItem sx={{ display: { xs: 'block', sm: 'none' } }}>
-            Notifications
-          </MenuItem>
-          <MenuItem>Profile</MenuItem>
-          <MenuItem>My account</MenuItem>
-          <MenuItem>Logout</MenuItem>
-        </Menu>
-      </StyledToolbar>
-    </AppBar>
+            <MenuItem sx={{ display: { xs: 'block', sm: 'none' } }}>
+              Message
+            </MenuItem>
+            <MenuItem sx={{ display: { xs: 'block', sm: 'none' } }}>
+              Notifications
+            </MenuItem>
+            <MenuItem>Profile</MenuItem>
+            <MenuItem>My account</MenuItem>
+            <MenuItem>Logout</MenuItem>
+          </Menu>
+        </StyledToolbar>
+      </AppBar>
+    </>
   );
 };
 
