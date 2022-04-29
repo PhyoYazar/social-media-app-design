@@ -5,6 +5,7 @@ import Stack from '@mui/material/Stack';
 
 import './App.css';
 import NavBar from './components/NavBar';
+import Add from './components/Add';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Feed />
         <RightBar />
       </Stack>
+      <Add />
     </>
   );
 }
