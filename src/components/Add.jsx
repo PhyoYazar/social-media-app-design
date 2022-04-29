@@ -58,7 +58,14 @@ const Add = () => {
         aria-labelledby='modal-modal-title'
         aria-describedby='modal-modal-description'
       >
-        <Box width={400} height={330} bgcolor='white' p={3} borderRadius={4}>
+        <Box
+          width={400}
+          height={330}
+          bgcolor={'background.default'}
+          text={'text.primary'}
+          p={3}
+          borderRadius={4}
+        >
           <Typography
             variant='h6'
             color='gray'
@@ -73,7 +80,7 @@ const Add = () => {
               src='https://material-ui.com/static/images/avatar/1.jpg'
               sx={{ width: 30, height: 30 }}
             />
-            <Typography fontWeight={500} variant='body2'>
+            <Typography color={'text.primary'} variant='span' fontWeight={500}>
               Remy Sharp
             </Typography>
           </UserBox>
