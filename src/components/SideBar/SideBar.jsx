@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import React from 'react';
 import ListItems from './ListItems';
 
-const SideBar = (props) => {
+const SideBar = () => {
   return (
     <Box
       sx={{
@@ -11,7 +11,9 @@ const SideBar = (props) => {
         display: { xs: 'none', md: 'block' },
       }}
     >
-      <ListItems mode={props.mode} setMode={props.setMode} />
+      <Box position={'fixed'}>
+        <ListItems />
+      </Box>
     </Box>
   );
 };

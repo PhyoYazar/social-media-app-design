@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Toolbar from '@mui/material/Toolbar';
 import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
+import Drawer from '@mui/material/Drawer';
 
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -16,6 +17,8 @@ import {
   styled,
 } from '@mui/material';
 import { Mail, Notifications } from '@mui/icons-material';
+import ListItems from './SideBar/ListItems';
+import { Box } from '@mui/system';
 
 const BoxMenuTypo = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -57,6 +60,7 @@ const UserBoxMobile = styled('div')(({ theme }) => ({
 
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [openDrawer, setOpenDrawer] = useState(false);
   const open = Boolean(anchorEl);
 
   return (
@@ -70,6 +74,7 @@ const NavBar = () => {
                 mr: '10px',
                 pt: 2,
               }}
+              onClick={() => setOpenDrawer(true)}
             >
               <MenuIcon />
             </IconButton>
@@ -130,6 +135,11 @@ const NavBar = () => {
           </Menu>
         </StyledToolbar>
       </AppBar>
+      <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
+        <Box width={240}>
+          <ListItems />
+        </Box>
+      </Drawer>
     </>
   );
 };
