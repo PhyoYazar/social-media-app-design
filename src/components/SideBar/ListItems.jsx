@@ -23,13 +23,22 @@ import {
   Switch,
 } from '@mui/material';
 
+let darkModeOpen;
+
 const ListItems = () => {
   const darkCtx = useContext(darkContext);
   const [open, setOpen] = useState(true);
 
+  const darkModeChangeHandler = (event) => {
+    darkCtx.setMode(event.target.checked ? 'dark' : 'light');
+  };
+
   const handleClick = () => {
     setOpen(() => !open);
   };
+
+  if (darkCtx.mode === 'light') darkModeOpen = false;
+  else darkModeOpen = true;
 
   return (
     <List>
@@ -91,11 +100,7 @@ const ListItems = () => {
         <ListItemIcon>
           <ModeNight />
         </ListItemIcon>
-        <Switch
-          onChange={() =>
-            darkCtx.setMode(darkCtx.mode === 'light' ? 'dark' : 'light')
-          }
-        />
+        <Switch checked={darkModeOpen} onChange={darkModeChangeHandler} />
       </ListItemButton>
     </List>
   );
